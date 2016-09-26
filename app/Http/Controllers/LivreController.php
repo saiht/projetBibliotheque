@@ -14,7 +14,7 @@
     {
         public function lister($tri = false)
         {
-            
+
             $livres = Livre::all();
             if ($tri) {
                 $livres = DB::table('livre')->where('auteur_id', '=', $tri)->get();

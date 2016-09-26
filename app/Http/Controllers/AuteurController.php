@@ -3,9 +3,11 @@
 namespace App\Http\Controllers;
 
 use App\Auteur;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
+use Illuminate\Support\Facades\Validator;
 
 class AuteurController extends Controller
 {
@@ -15,7 +17,6 @@ class AuteurController extends Controller
 
         return view('auteurs.list', compact('auteurs'));
     }
-
 
     public function show($id)
     {
@@ -27,10 +28,12 @@ class AuteurController extends Controller
     public function add(Request $request)
     {
         $validator = Validator::make($request->all(), [
-            'titre' => 'required|regex:/[\w\d\ ]{8,60}/|unique:livre,titre',
-            'magasin' => 'required|regex:/[\w\d]{4,60}/',
-            'image' => 'required|active_url',
-            'editeur' => ['required', "regex:/[a-zA-Z -']{4,30}/"],
+            'nom' => 'required|regex:/[a-zA-Z \-]{8,40}/',
+            'prenom' => 'required|regex:/[a-zA-Z \-]{8,40}/',
+            'ville' => 'required|regex:/[a-zA-Z \-]{8,40}/',
+            'dob' => 'required|date_format:d/m/Y',
+            'dod' => 'date:d/m/Y',
+            'age' => 'min:18|max:100|numeric',
             'prix' => 'required|numeric',
             'auteur' => 'required|exists:auteur,id',
             'parution' => 'required|digits:4',
@@ -49,8 +52,12 @@ class AuteurController extends Controller
 
             $livre = new Livre();
 
-            $parution = Carbon::createFromFormat($request->parution, 'Y');
-            dump($parution);
+            $dob = Carbon::createFromFormat($request->dob, 'd/m/Y');
+
+            if ($request->dob) {
+                $dod = Carbon::createFromFormat($request->dod, 'd/m/Y');
+            }
+
 
             $livre->titre = $request->titre;
             $livre->image = $request->image;

@@ -4,7 +4,6 @@
     @parent
 @endsection
 
-
 @section('content')
     <link rel="stylesheet" href="{{ asset('css/table.css') }}">
 
@@ -93,17 +92,10 @@
                                 </div>
 
                                 <div class="form-group @if($errors->has('dod')) has-warning @endif" >
-                                    <label for="dod">Date de Mort</label>
-                                    <input id="dod" value="{{ old('dod') }}" type="date" name="dod" class="form-control input-sm" placeholder="Date de mort (ou vide)">
+                                    <label for="dod">(Si décédé) Date de Mort</label>
+                                    <input id="dod" value="{{ old('dod') }}" type="text" name="dod" class="form-control input-sm" placeholder="jj/mm/aaaa">
                                     @if($errors->has('dod'))
                                         <span class="help-block text-danger">{{ $errors->first('dod') }}</span>
-                                    @endif
-                                </div>
-
-                                <div class="form-group @if($errors->has('age')) has-warning @endif" >
-                                    <input  value="{{ old('age') }}" type="text" name="age" class="form-control input-sm" placeholder="Age (ex: 33)">
-                                    @if($errors->has('age'))
-                                        <span class="help-block text-danger">{{ $errors->first('age') }}</span>
                                     @endif
                                 </div>
 
