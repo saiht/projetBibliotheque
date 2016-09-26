@@ -126,12 +126,14 @@
                                     @endif
                                 </div>
 
-                                <div class="form-group @if($errors->has('auteur')) has-warning @endif" >
+                                <div class="form-group @if($errors->has('courant_litteraire')) has-warning @endif" >
                                     <select name="auteur" class="form-control input-sm">
-
+                                        <option value="humanisme" @if(old('courant_litteraire') == 'humanisme') selected @endif>Humanisme</option>
+                                        <option value="romantisme" @if(old('courant_litteraire') == 'romantisme') selected @endif>Romantisme</option>
+                                        <option value="realisme" @if(old('courant_litteraire') == 'realisme') selected @endif>Réalisme</option>
                                     </select>
-                                    @if($errors->has('auteur'))
-                                        <span class="help-block text-danger">{{ $errors->first('auteur') }}</span>
+                                    @if($errors->has('courant_litteraire'))
+                                        <span class="help-block text-danger">{{ $errors->first('courant_litteraire') }}</span>
                                     @endif
                                 </div>
 

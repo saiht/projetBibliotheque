@@ -109,7 +109,7 @@
             }
 
 
-            return view('livres.list');
+            return redirect()->back();
         }
 
 
