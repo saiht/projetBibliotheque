@@ -27,11 +27,6 @@
         return \App\Auteur::all();
     });
 
-    // Afficher UN auteur au hasard en JSON
-        Route::get('/auteur', function () {
-            return \App\Auteur::all()->random();
-        });
-
 
     Route::group(['prefix' => "livres"], function(){
         //Ajout de la fonctionalité de tri par parution

@@ -12,10 +12,10 @@
 
     <div class="container">
 
-        <!-- FIRST ROW OF BLOCKS -->
+        <!-- Première Row -->
         <div class="row">
 
-            <!-- USER PROFILE BLOCK -->
+            <!-- Auteur en vogue -->
             <div class="col-sm-3 col-lg-3">
                 <div class="dash-unit">
                     <dtitle><i class="fa fa-star"></i>  Utilisateurs avec le plus d'oeuvres</dtitle>
@@ -50,101 +50,19 @@
                 </div>
             </div>
 
-            <!-- DONUT CHART BLOCK -->
-            <div class="col-sm-3 col-lg-3">
-                <div class="dash-unit">
-                    <dtitle>Site Bandwidth</dtitle>
-                    <hr>
-                    <div id="load"></div>
-                    <h2>45%</h2>
-                </div>
-            </div>
-
-            <!-- DONUT CHART BLOCK -->
-            <div class="col-sm-3 col-lg-3">
-                <div class="dash-unit">
-                    <dtitle>Disk Space</dtitle>
-                    <hr>
-                    <div id="space"></div>
-                    <h2>65%</h2>
-                </div>
-            </div>
-
-            <div class="col-sm-3 col-lg-3">
-
-                <!-- LOCAL TIME BLOCK -->
-                <div class="half-unit">
-                    <dtitle>Local Time</dtitle>
-                    <hr>
-                    <div class="clockcenter">
-                        <digiclock>09:25:38</digiclock>
-                    </div>
-                </div>
-
-                <!-- SERVER UPTIME -->
-                <div class="half-unit">
-                    <dtitle>Server Uptime</dtitle>
-                    <hr>
-                    <div class="cont">
-                        <p><img src="img/up.png" alt=""> <bold>Up</bold> | 356ms.</p>
-                    </div>
-                </div>
-
-            </div>
-        </div><!-- /row -->
-
-
-        <!-- SECOND ROW OF BLOCKS -->
-        <div class="row">
             <div class="col-sm-3 col-lg-3">
                 <!-- MAIL BLOCK -->
                 <div class="dash-unit">
-                    <dtitle>Inbox (1)</dtitle>
+                    <dtitle>Les livres parus cette année</dtitle>
                     <hr>
                     <div class="framemail">
                         <div class="window">
                             <ul class="mail">
-                                <li>
+                                <li>  <!-- ng-repeat -->
                                     <i class="unread"></i>
                                     <img class="avatar" src="img/photo01.jpeg" alt="avatar">
                                     <p class="sender">Adam W.</p>
                                     <p class="message"><strong>Working</strong> - This is the last...</p>
-                                    <div class="actions">
-                                        <a><img src="http://png-1.findicons.com/files//icons/2232/wireframe_mono/16/undo.png" alt="reply"></a>
-                                        <a><img src="http://png-1.findicons.com/files//icons/2232/wireframe_mono/16/star_fav.png" alt="favourite"></a>
-                                        <a><img src="http://png-4.findicons.com/files//icons/2232/wireframe_mono/16/tag.png" alt="label"></a>
-                                        <a><img src="http://png-4.findicons.com/files//icons/2232/wireframe_mono/16/trash.png" alt="delete"></a>
-                                    </div>
-                                </li>
-                                <li>
-                                    <i class="read"></i>
-                                    <img class="avatar" src="img/photo02.jpg" alt="avatar">
-                                    <p class="sender">Dan E.</p>
-                                    <p class="message"><strong>Hey man!</strong> - You have to taste ...</p>
-                                    <div class="actions">
-                                        <a><img src="http://png-1.findicons.com/files//icons/2232/wireframe_mono/16/undo.png" alt="reply"></a>
-                                        <a><img src="http://png-1.findicons.com/files//icons/2232/wireframe_mono/16/star_fav.png" alt="favourite"></a>
-                                        <a><img src="http://png-4.findicons.com/files//icons/2232/wireframe_mono/16/tag.png" alt="label"></a>
-                                        <a><img src="http://png-4.findicons.com/files//icons/2232/wireframe_mono/16/trash.png" alt="delete"></a>
-                                    </div>
-                                </li>
-                                <li>
-                                    <i class="read"></i>
-                                    <img class="avatar" src="img/photo03.jpg" alt="avatar">
-                                    <p class="sender">Leonard N.</p>
-                                    <p class="message"><strong>New Mac :D</strong> - So happy with ...</p>
-                                    <div class="actions">
-                                        <a><img src="http://png-1.findicons.com/files//icons/2232/wireframe_mono/16/undo.png" alt="reply"></a>
-                                        <a><img src="http://png-1.findicons.com/files//icons/2232/wireframe_mono/16/star_fav.png" alt="favourite"></a>
-                                        <a><img src="http://png-4.findicons.com/files//icons/2232/wireframe_mono/16/tag.png" alt="label"></a>
-                                        <a><img src="http://png-4.findicons.com/files//icons/2232/wireframe_mono/16/trash.png" alt="delete"></a>
-                                    </div>
-                                </li>
-                                <li>
-                                    <i class="read"></i>
-                                    <img class="avatar" src="img/photo04.jpg" alt="avatar">
-                                    <p class="sender">Peter B.</p>
-                                    <p class="message"><strong>Thank you</strong> - Finally I can ...</p>
                                     <div class="actions">
                                         <a><img src="http://png-1.findicons.com/files//icons/2232/wireframe_mono/16/undo.png" alt="reply"></a>
                                         <a><img src="http://png-1.findicons.com/files//icons/2232/wireframe_mono/16/star_fav.png" alt="favourite"></a>
@@ -158,6 +76,36 @@
                 </div><!-- /dash-unit -->
             </div><!-- /span3 -->
 
+
+            <div class="col-sm-3 col-lg-3">
+
+                <!-- LOCAL TIME BLOCK -->
+                <div class="half-unit">
+                    <dtitle>Local Time</dtitle>
+                    <hr>
+                    <div class="clockcenter">
+                        <digiclock>  <!-- Généré automatiquement -->  </digiclock>
+                    </div>
+                </div>
+
+            </div>
+
+        </div><!-- /row -->
+
+
+        <!-- Seconde Row -->
+        <div class="row">
+
+
+            <!-- DONUT CHART BLOCK -->
+            <div class="col-sm-3 col-lg-3">
+                <div class="dash-unit">
+                    <dtitle>Site Bandwidth</dtitle>
+                    <hr>
+                    <div id="load"></div>
+                    <h2>45%</h2>
+                </div>
+            </div>
 
             <!-- LAST MONTH REVENUE -->
             <div class="col-sm-3 col-lg-3">
