@@ -147,7 +147,6 @@
                                     @endif
                                 </div>
 
-                                {{-- À modifier pour le rendre dynamique  --}}
                                 <div class="form-group @if($errors->has('auteur')) has-warning @endif" >
                                     <select name="auteur" class="form-control input-sm">
                                         @forelse(\App\Auteur::all() as $auteur)

@@ -51,6 +51,8 @@
         Route::get('/list', 'AuteurController@lister')->name('auteurs.list');
 
         Route::any('/show/{id}', 'AuteurController@show')->name('auteurs.show');
+        Route::any('/add', 'AuteurController@add')->name('auteurs.add');
+
 
     });
 

@@ -54,7 +54,7 @@
 
                     <h3><i class="fa fa-user"></i> Ajouter un auteur</h3>
 
-                    <form id="formAjout" role="form" method="post" action="{{ route('livres.add') }}">
+                    <form id="formAjout" role="form" method="post" action="{{ route('auteurs.add') }}">
                         {{ csrf_field() }}
                         <div class="row">
 
@@ -119,13 +119,6 @@
                                     @endif
                                 </div>
 
-                                <div class="form-group @if($errors->has('ean')) has-warning @endif" >
-                                    <input  value="{{ old('ean') }}" type="text" name="ean" class="form-control input-sm" placeholder="EAN (ex : 9783161484100)">
-                                    @if($errors->has('ean'))
-                                        <span class="help-block text-danger">{{ $errors->first('ean') }}</span>
-                                    @endif
-                                </div>
-
                                 <div class="form-group @if($errors->has('image')) has-warning @endif" >
                                     <input value="{{ old('image') }}"  type="text" name="image" class="form-control input-sm" placeholder="URL de l'image">
                                     @if($errors->has('image'))
@@ -133,14 +126,9 @@
                                     @endif
                                 </div>
 
-                                {{-- À modifier pour le rendre dynamique  --}}
                                 <div class="form-group @if($errors->has('auteur')) has-warning @endif" >
                                     <select name="auteur" class="form-control input-sm">
-                                        @forelse(\App\Auteur::all() as $auteur)
-                                            <option value="{{ $auteur->id }}">{{ $auteur->nom }} {{ $auteur->prenom }}</option>
-                                        @empty
-                                            <a href="{{ route('auteurs.list') }}">(Redirection) Veuillez d'abord ajouter un auteur</a>
-                                        @endforelse
+
                                     </select>
                                     @if($errors->has('auteur'))
                                         <span class="help-block text-danger">{{ $errors->first('auteur') }}</span>
