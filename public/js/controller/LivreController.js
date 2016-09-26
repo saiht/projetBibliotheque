@@ -8,13 +8,21 @@ app.config(function ($interpolateProvider) {
 app.controller('LivreController', function LivreController($scope, $http) {
 
 
-    var livres = $scope.livres = [];
+    $scope.livres = [];
 
-    $http.get('/livres')      //Envoyer le contenu du message
+    $http.get('/livres')  
         .then(function (response) {
             $scope.livres = response.data;
-
-            console.log($scope.livres);
+            // console.log($scope.livres);
         });
+
+    $scope.livresParus = [];
+
+    $http.get('/livres/parution')
+        .then(function (response) {
+            $scope.livresParus = response.data;
+        });
+
+
 
 });

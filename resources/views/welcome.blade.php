@@ -62,11 +62,11 @@
                     <hr>
                     <div class="framemail">
                         <div class="window">
-                            <ul class="mail">
-                                <li ng-repeat="livre in livres">  <!-- ng-repeat -->
+                            <ul class="mail" ng-repeat="livreParu in livresParus">
+                                <li>  <!-- ng-repeat -->
                                     <i class="unread"></i>
-                                    <img class="avatar" src="// livre.image //" alt="avatar" width="20" height="auto">
-                                    <p class="sender">// livre.titre //</p>
+                                    <img class="avatar" src="// livreParu.image //" alt="avatar" width="20" height="auto">
+                                    <p class="sender">// livreParu.titre //</p>
                                     <p class="message"><strong>Working</strong> - This is the last...</p>
                                     <div class="actions">
                                         <a><img src="http://png-1.findicons.com/files//icons/2232/wireframe_mono/16/undo.png" alt="reply"></a>
@@ -118,47 +118,17 @@
             <div class="row">
 
                 <!-- ACCORDION BLOCK -->
-                <div class="col-sm-3 col-lg-3" ng-controller="LivreController">
+                <div class="col-sm-5 col-lg-5" ng-controller="LivreController">
                     <div class="dash-unit">
-                        <dtitle>Accordion</dtitle>
+                        <dtitle>Les livres</dtitle>
+                        <a class="pull-right" href="{{ route('livres.list') }}">Aller à la liste</a>
                         <hr>
-                        <div class="accordion" id="accordion2">
+                        <div class="accordion" id="accordion2" ng-repeat="livre in livres">
                             <div class="accordion-group">
                                 <div class="accordion-heading">
                                     <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseOne">
-                                        Collapsible Group Item #1
+                                        // livre.titre //
                                     </a>
-                                </div>
-                                <div id="collapseOne" class="accordion-body collapse in">
-                                    <div class="accordion-inner">
-                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla iaculis mattis lorem.
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="accordion-group">
-                                <div class="accordion-heading">
-                                    <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseTwo">
-                                        Collapsible Group Item #2
-                                    </a>
-                                </div>
-                                <div id="collapseTwo" class="accordion-body collapse">
-                                    <div class="accordion-inner">
-                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla iaculis mattis lorem.
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="accordion-group">
-                                <div class="accordion-heading">
-                                    <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseThree">
-                                        Collapsible Group Item #3
-                                    </a>
-                                </div>
-                                <div id="collapseThree" class="accordion-body collapse">
-                                    <div class="accordion-inner">
-                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla iaculis mattis lorem.
-                                    </div>
                                 </div>
                             </div>
                         </div><!--/accordion -->

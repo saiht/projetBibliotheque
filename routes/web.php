@@ -27,8 +27,12 @@
         return \App\Auteur::all();
     });
 
-    Route::get('/livres', function () {
+    Route::get('/livres/parution', function () {
         return \App\Livre::where('parution', '=', \Carbon\Carbon::now()->year)->get();
+    });
+
+    Route::get('/livres', function () {
+        return \App\Livre::select('livre.titre')->get();
     });
 
 
