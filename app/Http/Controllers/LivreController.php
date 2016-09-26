@@ -83,11 +83,14 @@
 
                 $livre = new Livre();
 
+                $parution = Carbon::createFromFormat($request->parution, 'Y');
+                dump($parution);
+
                 $livre->titre = $request->titre;
                 $livre->image = $request->image;
                 $livre->magasin = $request->magasin;
                 $livre->editeur = $request->editeur;
-                $livre->parution = $request->parution;
+                $livre->parution = $parution;
                 $livre->numerique = $request->numerique == '1' ? 1 : 0;
                 $livre->prix = $request->prix;
                 $livre->resume = $request->resume;

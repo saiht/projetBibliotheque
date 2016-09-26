@@ -6,11 +6,12 @@
 
 @section('js')
     @parent
+    <script type="text/javascript" src="{{ asset('js/controller/LivreController.js') }}"></script>
 @endsection
 
 @section('content')
 
-    <div class="container">
+    <div class="container" ng-app="app">
 
         <!-- Première Row -->
         <div class="row">
@@ -40,10 +41,11 @@
                     <dtitle><i class="fa fa-clock-o"></i>  Dernier livre ajouté</dtitle>
                     <hr>
                     <div class="info-user">
-                        <a href="{{ route('livres.show', $lastBook->id) }}"><span aria-hidden="true" class="li_news fs2"></span></a>
+                        <a href="{{ route('livres.show', $lastBook->id) }}"><span aria-hidden="true" class="li_news fs2"> # {{ $lastBook->id }}</span></a>
                     </div>
                     <br>
                     <div class="text">
+                        <h3><a href="{{ route('livres.show', $lastBook->id) }}">{{ $lastBook->titre }}</a></h3>
                         <p>{{ mb_strimwidth($lastBook->resume, 0, 100) }}<a href="{{ route('livres.show', $lastBook->id) }}">...Voir plus...</a></p>
                         <?php
                         \Carbon\Carbon::setLocale('fr');
@@ -53,7 +55,7 @@
                 </div>
             </div>
 
-            <div class="col-sm-3 col-lg-3">
+            <div class="col-sm-3 col-lg-3" ng-controller="LivreController">
                 <!-- MAIL BLOCK -->
                 <div class="dash-unit">
                     <dtitle>Les livres parus cette année</dtitle>
@@ -61,10 +63,10 @@
                     <div class="framemail">
                         <div class="window">
                             <ul class="mail">
-                                <li>  <!-- ng-repeat -->
+                                <li ng-repeat="livre in livres">  <!-- ng-repeat -->
                                     <i class="unread"></i>
-                                    <img class="avatar" src="img/photo01.jpeg" alt="avatar">
-                                    <p class="sender">Adam W.</p>
+                                    <img class="avatar" src="// livre.image //" alt="avatar" width="20" height="auto">
+                                    <p class="sender">// livre.titre //</p>
                                     <p class="message"><strong>Working</strong> - This is the last...</p>
                                     <div class="actions">
                                         <a><img src="http://png-1.findicons.com/files//icons/2232/wireframe_mono/16/undo.png" alt="reply"></a>

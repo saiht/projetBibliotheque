@@ -2,8 +2,6 @@
 
 @section('js')
     @parent
-    <script type="text/javascript" src="{{ asset('js/controller/LivreController.js') }}"></script>
-
 @endsection
 @section('css')
     @parent

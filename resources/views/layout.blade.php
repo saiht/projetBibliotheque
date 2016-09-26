@@ -83,7 +83,7 @@
 @include('partials/_header')
 
 
-<div class="container" ng-app="app">
+<div class="container">
 
 
     @section('content')

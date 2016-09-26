@@ -5,24 +5,16 @@ app.config(function ($interpolateProvider) {
     $interpolateProvider.endSymbol('//');
 });
 
-app.controller('LivreController', function LivreController($scope, $http, $interval) {
+app.controller('LivreController', function LivreController($scope, $http) {
 
 
     var livres = $scope.livres = [];
 
-    function areDifferentByIds(a, b) {
-        var idA = a.map( function (x) { return x.id;}).sort();
-        var idB = b.map( function (x) { return x.id;}).sort();
-        return (idA.join(',') !== idB.join(','));
-    }
+    $http.get('/livres')      //Envoyer le contenu du message
+        .then(function (response) {
+            $scope.livres = response.data;
 
-    $interval(function() {
-        $http.get('/livres')      //Envoyer le contenu du message
-            .then(function (response) {
-                if (areDifferentByIds($scope.livres, response.data)) {
-                    $scope.livres = response.data;
-                }
-            });
-    }, 500);
+            console.log($scope.livres);
+        });
 
 });

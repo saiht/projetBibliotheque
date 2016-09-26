@@ -2,6 +2,7 @@
 
 namespace App;
 
+use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\DB;
 
@@ -19,6 +20,10 @@ class Livre extends Model
 
     public static function getLastAdded() {
         return self::orderBy('id', 'desc')->first();
+    }
+
+    public static function getPublishedThisYear() {
+        return self::where('parution', '=', Carbon::now()->year)->get();
     }
 
 

@@ -27,6 +27,10 @@
         return \App\Auteur::all();
     });
 
+    Route::get('/livres', function () {
+        return \App\Livre::where('parution', '=', \Carbon\Carbon::now()->year)->get();
+    });
+
 
     Route::group(['prefix' => "livres"], function(){
         //Ajout de la fonctionalité de tri par parution
