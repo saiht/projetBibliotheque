@@ -14,7 +14,10 @@ class WelcomeController extends Controller
 
         $bestAutor = Auteur::find(Livre::getBestAutor()->auteur_id);
 
-        return view('welcome', compact('bestAutor'));
+        $lastBook = Livre::getLastAdded();
+
+
+        return view('welcome', compact('bestAutor', 'lastBook'));
     }
 
 

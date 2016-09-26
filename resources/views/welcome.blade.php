@@ -40,12 +40,15 @@
                     <dtitle><i class="fa fa-clock-o"></i>  Dernier livre ajouté</dtitle>
                     <hr>
                     <div class="info-user">
-                        <span aria-hidden="true" class="li_news fs2"></span>
+                        <a href="{{ route('livres.show', $lastBook->id) }}"><span aria-hidden="true" class="li_news fs2"></span></a>
                     </div>
                     <br>
                     <div class="text">
-                        <p><b>Alvarez.is:</b> A beautiful new Dashboard theme has been realised by Carlos Alvarez. Please, visit <a href="http://alvarez.is">Alvarez.is</a> for more details.</p>
-                        <p><grey>Last Update: 5 minutes ago.</grey></p>
+                        <p>{{ mb_strimwidth($lastBook->resume, 0, 100) }}<a href="{{ route('livres.show', $lastBook->id) }}">...Voir plus...</a></p>
+                        <?php
+                        \Carbon\Carbon::setLocale('fr');
+                        ?>
+                        <p><grey>Ajouté : {{ $lastBook->created_at->diffForHumans() }}</grey></p>
                     </div>
                 </div>
             </div>

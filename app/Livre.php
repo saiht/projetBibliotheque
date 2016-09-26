@@ -17,5 +17,9 @@ class Livre extends Model
             ->first();
     }
 
+    public static function getLastAdded() {
+        return self::orderBy('id', 'desc')->first();
+    }
+
 
 }
