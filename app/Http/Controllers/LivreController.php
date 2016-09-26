@@ -14,9 +14,7 @@
     {
         public function lister($tri = false)
         {
-
-//            dump(is_int($tri), $tri);
-
+            
             $livres = Livre::all();
             if ($tri) {
                 $livres = DB::table('livre')->where('auteur_id', '=', $tri)->get();
