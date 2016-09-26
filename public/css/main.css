@@ -808,9 +808,8 @@ a:hover {
 	border-top-width:8px;
 	border-top-color:#1d1d1d;
 	text-align:center;
-	position: relative;
+	position: static;
 	bottom:0;
-
 }
 
 #footerwrap p {

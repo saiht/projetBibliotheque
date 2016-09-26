@@ -81,6 +81,23 @@
                 {{--</div><!-- /dash-unit -->--}}
             {{--</div><!-- /span3 -->--}}
 
+            <div class="col-sm-3 col-lg-3" ng-controller="LivreController">
+                <div class="dash-unit">
+                    <dtitle>Les livres</dtitle>
+                    <a class="pull-right" href="{{ route('livres.list') }}">Aller à la liste</a>
+                    <hr>
+                    <div class="accordion" id="accordion2" ng-repeat="livre in livres">
+                        <div class="accordion-group">
+                            <div class="accordion-heading">
+                                <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseOne">
+                                    // livre.titre //
+                                </a>
+                            </div>
+                        </div>
+                    </div><!--/accordion -->
+                </div>
+            </div>
+
 
             <div class="col-sm-3 col-lg-3 pull-right">
 
@@ -97,66 +114,5 @@
 
         </div><!-- /row -->
 
-
-        <!-- Seconde Row -->
-        <div class="row">
-
-
-            <!-- DONUT CHART BLOCK -->
-            <div class="col-sm-3 col-lg-3">
-                <div class="dash-unit">
-                    <dtitle>Site Bandwidth</dtitle>
-                    <hr>
-                    <div id="load"></div>
-                    <h2>45%</h2>
-                </div>
-            </div>
-
-
-
-            <!-- FOURTH ROW OF BLOCKS -->
-            <div class="row">
-
-                <!-- ACCORDION BLOCK -->
-                <div class="col-sm-5 col-lg-5" ng-controller="LivreController">
-                    <div class="dash-unit">
-                        <dtitle>Les livres</dtitle>
-                        <a class="pull-right" href="{{ route('livres.list') }}">Aller à la liste</a>
-                        <hr>
-                        <div class="accordion" id="accordion2" ng-repeat="livre in livres">
-                            <div class="accordion-group">
-                                <div class="accordion-heading">
-                                    <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseOne">
-                                        // livre.titre //
-                                    </a>
-                                </div>
-                            </div>
-                        </div><!--/accordion -->
-                    </div>
-                </div>
-
-
-                <!-- INFORMATION BLOCK -->
-                <div class="col-sm-3 col-lg-3">
-                    <div class="dash-unit">
-                        <dtitle>Block Dashboard</dtitle>
-                        <hr>
-                        <div class="info-user">
-                            <span aria-hidden="true" class="li_display fs2"></span>
-                        </div>
-                        <br>
-                        <div class="text">
-                            <p>Block Dashboard created by Basicoh.</p>
-                            <p>Special Thanks to Highcharts, Linecons and Bootstrap for their amazing tools.</p>
-                        </div>
-
-                    </div>
-                </div>
-
-            </div><!--/row -->
-
-
-
-        </div>
 
 @endsection
