@@ -49,7 +49,7 @@
 
         <div class="row">
 
-            <div class="col-sm-12 col-lg-12">
+            <div class="col-sm-6 col-lg-6 col-sm-offset-3 col-md-offset-3">
                 <div id="register-wraper">
 
                     <h3><i class="fa fa-user"></i> Ajouter un auteur</h3>
@@ -59,7 +59,7 @@
                         <div class="row">
 
                             {{-- 1ère colonne --}}
-                            <div class="col-md-6">
+                            <div class="col-md-12">
 
                                 <input value="m" @if(old('sexe') == 'm') checked @endif  id="homme" type="radio" name="sexe">
                                 <label style="display: inline" for="homme" class="inline">Homme</label>
@@ -111,11 +111,11 @@
                             {{-- ./1ère colonne --}}
 
                             {{-- 2nd colonne --}}
-                            <div class="col-md-6">
-                                <div class="form-group @if($errors->has('ISBN')) has-warning @endif" >
-                                    <input  value="{{ old('ISBN') }}" type="text" name="ISBN" class="form-control input-sm" placeholder="ISBN (ex : 978-3-16-148410-0)">
-                                    @if($errors->has('ISBN'))
-                                        <span class="help-block text-danger">{{ $errors->first('ISBN') }}</span>
+                            <div class="col-md-12">
+                                <div class="form-group @if($errors->has('ville')) has-warning @endif" >
+                                    <input  value="{{ old('ville') }}" type="text" name="ISBN" class="form-control input-sm" placeholder="Ville">
+                                    @if($errors->has('ville'))
+                                        <span class="help-block text-danger">{{ $errors->first('ville') }}</span>
                                     @endif
                                 </div>
 
@@ -178,9 +178,6 @@
                             <button type="submit" class="btn btn-success">Ajouter</button>
                         </div>
                     </form>
-
-
-
 
                 </div>
             </div>
