@@ -10,7 +10,7 @@ app.controller('LivreController', function LivreController($scope, $http) {
 
     $scope.livres = [];
 
-    $http.get('/livres')  
+    $http.get('/livres')
         .then(function (response) {
             $scope.livres = response.data;
             // console.log($scope.livres);

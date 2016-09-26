@@ -327,7 +327,7 @@ textarea {
 	margin: 10px auto;
 	min-height: 130px;
 }
-#formAjout input#numerique, #formAjout input#cgv {
+#formAjout input#numerique, #formAjout input#cgv, input#homme, input#femme {
 	display: inline;
 	width:10px;
 	margin: 0 10px;
