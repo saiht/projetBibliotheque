@@ -129,9 +129,6 @@
                                     @endif
                                 </div>
 
-                                <input value="1" @if(old('numerique')) checked @endif  id="numerique" type="checkbox" name="numerique">
-                                <label style="display: inline" for="numerique" class="inline">Disponible en version numérique</label>
-
                             </div>
                             {{-- ./Seconde colonne --}}
 
